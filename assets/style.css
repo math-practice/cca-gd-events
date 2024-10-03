@@ -94,7 +94,7 @@ header, .url, .format, .sponsor, .gdevent {
 
 #gdlogo {
 	width:53.75px;
-	position: fixed;
+	position: absolute;
 	top:40px;
 	right: 30px;
 }
@@ -126,6 +126,16 @@ header p {
 a {
 	color:black;
 	text-decoration: none;
+}
+p a {
+  text-decoration: underline;
+}
+p a:hover {
+  text-decoration: none;
+}
+
+.no-br {
+  white-space: nowrap;
 }
 
 span a {
@@ -374,4 +384,22 @@ span a {
 		opacity: 1;	
 	}
 
+}
+
+
+/* background addition 12/2/2024 */
+.bg {
+  position: fixed;
+  z-index: -1;
+}
+.fish {
+  position: absolute;
+  width: 18vh;
+  animation: move 10s linear infinite; 
+}
+@keyframes move {
+  0% { transform: translateX(var(--start)); }
+  50% { transform: translateX(calc(100vw + var(--start))); }
+  50.0001% { transform: translateX(calc(0vw - calc(100vw - var(--start)))); }
+  100% { transform: translateX(var(--start)); }
 }
